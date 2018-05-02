@@ -19,6 +19,7 @@
         $password = 'neto1721';
         $host = 'localhost';
         $dbname = 'lubimcev';
+        $charset = 'utf8';
         $result = [];
         $param_strings = [];
         $where_string = '';
@@ -37,7 +38,7 @@
         }
         $request .= " ORDER BY name ASC";
         try {
-            $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=$charset", $user, $password);
             $result = $pdo->query($request);
             $pdo = null;
         } catch (Exception $error) {
